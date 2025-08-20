@@ -1,0 +1,16 @@
+.root{
+    margin-left: 5%;
+}
+.recomendation{
+    font-family: 'Manrope', Arial, sans-serif;
+}
+.product{
+    border-radius: 16px;
+    border: 2px black solid;
+    width: 155px;
+    height: 155px;
+}
+.product img{
+    width: 150px;
+    height: 150px;
+}
