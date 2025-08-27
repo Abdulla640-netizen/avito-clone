@@ -40,6 +40,7 @@ width: 250px; ;
 height: ;
 font-size: 18px;
 margin-top: 8px;
+transition: 0.3s;
 }
 .strong{
     margin-top: 8px;
@@ -48,4 +49,22 @@ margin-top: 8px;
     width: 250px;
     height: 250px;
 }
+.btn-detailed:hover{
+    background-color: blueviolet;
 
+}
+.producttop{
+display: flex;
+justify-content:space-between;
+}
+.producttop svg:hover{
+stroke: red;
+
+
+}
+.producttop svg{
+    transition: 0.3s;
+}
+.producttop svg:active{
+    fill: red;
+}
