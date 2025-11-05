@@ -6,7 +6,7 @@
 // // sum(34,-45)
 // // sum(3.4,-3.4)
 // // function getMultipliedFor (array,number){
-// //   let result=[] 
+// //   let result=[]
 // //   for(let i=0;i<array.length ; i++){
 // //     if(array[i]%number==0){
 // //       result.push(array[i])
@@ -20,7 +20,7 @@
 //   let result=[]
 //   for(let i=numbers.length;i>0 ; i--){
 //     result.push(numbers[i-1])
-    
+
 //   }
 //   return result
 // }
@@ -38,27 +38,64 @@
 //   }
 // }
 // console.log(result)
-function getAvg(numbers){
-  let sum=(0)
-  for(let i=0 ; i<numbers.length ; i++){
-    sum+=numbers[i]
-  }
-  return sum/numbers.length
-}
-function taskSolution(numbers){
-  let avg= getAvg(numbers)
-  let result=[]
-  for(let i=0 ; i<numbers.length ; i++){
-     if(numbers[i]<avg){
-     result.push(numbers[i])
-   }
+// function getAvg(numbers){
+//   let sum=(0)
+//   for(let i=0 ; i<numbers.length ; i++){
+//     sum+=numbers[i]
+//   }
+//   return sum/numbers.length
+// }
+// function taskSolution(numbers){
+//   let avg= getAvg(numbers)
+//   let result=[]
+//   for(let i=0 ; i<numbers.length ; i++){
+//      if(numbers[i]<avg){
+//      result.push(numbers[i])
+//    }
+//   }
+//   return result
+// }
+// let numbers =[21,23,21,54]
+// console.log(taskSolution(numbers))
+// console.log(getAvg(numbers))
+const people = [
+  {
+    name: "Alex",
+    city: "Moscow",
+  },
+  {
+    name: "Ivan",
+    city: "Moscow",
+  },
+  {
+    name: "Joe",
+    city: "New York",
+  },
+  {
+    name: "Johan",
+    city: "Berlin",
+  },
+];
+
+const groupByCity = (array) => {
+  let result = {};
+  for (let i = 0; i < array.length; i++) {
+    let person=array[i]
+    const city = person.city
+    const name =person.name
+    if (result[city]) {
+      // если уже есть строка — превращаем в массив
+      if (typeof result[city] === 'string') {
+        result[city] = [result[city], name];
+      } else {
+        // если массив — просто пушим
+        result[city].push(name);
+      }
+    } else {
+      // если города ещё нет — записываем строкой
+      result[city] = name;
+    }
   }
   return result
-}
-let numbers =[21,23,21,54]
-console.log(taskSolution(numbers))
-console.log(getAvg(numbers))
-
-
-
-
+};
+console.log(groupByCity(people));

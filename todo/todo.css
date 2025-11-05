@@ -1,0 +1,146 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px;
+  margin: 0;
+}
+
+/* Контейнер */
+.todo-container {
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+  width: 400px;
+  animation: fadeIn 0.5s ease;
+}
+
+.todo-container h1 {
+  margin: 0 0 20px;
+  text-align: center;
+  color: #333;
+  font-size: 26px;
+}
+
+/* Ввод */
+.input-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-group input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.2s;
+}
+
+.input-group input:focus {
+  border-color: #66a6ff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102,166,255,0.2);
+}
+
+.input-group button {
+  background: #66a6ff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  width: 45px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.input-group button:hover {
+  background: #4a8be0;
+  transform: scale(1.05);
+}
+
+/* Список */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  background: #f9f9f9;
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  transition: all 0.2s;
+}
+
+li:hover {
+  background: #f1f7ff;
+  transform: translateY(-2px);
+}
+
+li.completed span {
+  text-decoration: line-through;
+  color: #aaa;
+  opacity: 0.7;
+}
+
+/* Текст задачи */
+li span {
+  flex: 1;
+  font-size: 16px;
+}
+
+/* Иконки */
+.icon-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+
+.icon-btn:hover {
+  transform: scale(1.2);
+}
+
+.icon-btn.edit { color: #66a6ff; }
+.icon-btn.delete { color: #e74c3c; }
+.icon-btn.save { color: #27ae60; }
+
+/* Поле редактирования */
+.edit-input {
+  flex: 1;
+  padding: 6px 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+.edit-input:focus {
+  border-color: #27ae60;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(39,174,96,0.2);
+}
+
+/* Анимации */
+.fade-out {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.3s;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
